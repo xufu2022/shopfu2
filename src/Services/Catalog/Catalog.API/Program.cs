@@ -1,8 +1,10 @@
 using Catalog.API.Data;
 using Catalog.API.Repositories;
+using Common.Logging;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog(SeriLogger.Configure);
 // Add services to the container.
 builder.Services.AddScoped<ICatalogContext, CatalogContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();

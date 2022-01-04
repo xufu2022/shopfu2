@@ -1,14 +1,16 @@
 using Basket.API.Grpc_Services;
 using Basket.API.Repositories;
+using Common.Logging;
 using Discount.GRPC.Protos;
 using Grpc.Core;
 using MassTransit;
 using MassTransit.Exceptions;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog(SeriLogger.Configure);
 // Redis Configuration
 builder.Services.AddStackExchangeRedisCache(options =>
 {
