@@ -65,6 +65,6 @@ the index pattern cannot be created need run app in local but keep docker compos
 create index applogs-*, then 
 
 
-black 6 - middle
+block 6 - middle (20 minutes)
 
 
