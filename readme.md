@@ -29,7 +29,7 @@ add docker compose and also to the override file
     image: docker.elastic.co/kibana/kibana:7.9.2
 
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
-docker-compose -f docker-compose.yml -f docker-compose.override.yml down -d
+docker-compose -f docker-compose.yml -f docker-compose.override.yml down 
 
 localhost:9200
 localhost:9200/_aliases
@@ -50,4 +50,21 @@ example
     }
 
 Elastic search and kanbana and serilog integration
+
+Step 1 : (project aspnetrunbasics)
+    install-package Serilog.AspNetCore
+    install-package Serilog.Enrichers.Environment
+    install-package Serilog.Sinks.Elasticsearch
+
+replacing microsoft logging to serilog
+
+set up serilog in application and test data in kanbana
+
+the index pattern cannot be created need run app in local but keep docker compose running
+
+create index applogs-*, then 
+
+
+
+
 
